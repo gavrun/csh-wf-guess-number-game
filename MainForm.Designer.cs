@@ -33,6 +33,8 @@
             this.btnCheck = new System.Windows.Forms.Button();
             this.btnRestart = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.txtMinRange = new System.Windows.Forms.TextBox();
+            this.txtMaxRange = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +49,7 @@
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(26, 31);
+            this.lblMessage.Location = new System.Drawing.Point(26, 84);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(50, 13);
             this.lblMessage.TabIndex = 1;
@@ -83,11 +85,29 @@
             this.pictureBoxLogo.TabIndex = 4;
             this.pictureBoxLogo.TabStop = false;
             // 
+            // txtMinRange
+            // 
+            this.txtMinRange.Location = new System.Drawing.Point(29, 31);
+            this.txtMinRange.Name = "txtMinRange";
+            this.txtMinRange.Size = new System.Drawing.Size(100, 20);
+            this.txtMinRange.TabIndex = 5;
+            this.txtMinRange.Text = "1";
+            // 
+            // txtMaxRange
+            // 
+            this.txtMaxRange.Location = new System.Drawing.Point(29, 58);
+            this.txtMaxRange.Name = "txtMaxRange";
+            this.txtMaxRange.Size = new System.Drawing.Size(100, 20);
+            this.txtMaxRange.TabIndex = 6;
+            this.txtMaxRange.Text = "100";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(323, 223);
+            this.Controls.Add(this.txtMaxRange);
+            this.Controls.Add(this.txtMinRange);
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.btnCheck);
@@ -108,6 +128,8 @@
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
+        private System.Windows.Forms.TextBox txtMinRange;
+        private System.Windows.Forms.TextBox txtMaxRange;
     }
 }
 

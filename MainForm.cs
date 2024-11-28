@@ -25,12 +25,21 @@ namespace csh_wf_guess_number_game
 
         private void StartGame()
         {
+            int minRange = 1; 
+            int maxRange = 100;
+
+            if (int.TryParse(txtMinRange.Text, out int min) && int.TryParse(txtMaxRange.Text, out int max) && min < max)
+            {
+                minRange = min;
+                maxRange = max;
+            }
+
             Random rnd = new Random();
-            randomNumber = rnd.Next(1, 101);
+            randomNumber = rnd.Next(minRange, maxRange + 1);
 
             attempts = 0;
 
-            lblMessage.Text = "Guess number from 1 to 100!";
+            lblMessage.Text = $"Guess number from {txtMinRange.Text} to {txtMaxRange.Text}!";
 
             txtGuess.Clear();
             txtGuess.Focus();
