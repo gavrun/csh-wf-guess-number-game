@@ -16,7 +16,19 @@ namespace csh_wf_guess_number_game
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            // Switch to starting from MenuForm 
+
+            //using (MenuForm menuForm = new MenuForm())
+            //{
+            //    if (menuForm.ShowDialog() == DialogResult.OK)
+            //    {
+            //        Application.Run(new MainForm());
+            //    }
+            //}
+
+            //Application.Run(new MainForm());
+            Application.Run(new MenuForm());
         }
     }
 }
