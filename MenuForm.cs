@@ -19,15 +19,13 @@ namespace csh_wf_guess_number_game
 
         private void buttonStartGame_Click(object sender, EventArgs e)
         {
-            // Create MainForm
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
+            ModeForm modeForm = new ModeForm();
+            modeForm.Show();
 
-            // Close MenuForm
             this.Hide();
 
             // alternative approach 
-                
+
             //this.Hide();
             //using (MainForm mainForm = new MainForm())
             //{
@@ -38,7 +36,7 @@ namespace csh_wf_guess_number_game
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            // Exit application
+            // Exit application when clicking [X]
             Application.Exit();
         }
 

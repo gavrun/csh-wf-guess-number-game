@@ -33,6 +33,7 @@
             this.buttonViewRecords = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonRules = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonStartGame
@@ -47,7 +48,7 @@
             // 
             // buttonSettings
             // 
-            this.buttonSettings.Location = new System.Drawing.Point(195, 183);
+            this.buttonSettings.Location = new System.Drawing.Point(195, 313);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Size = new System.Drawing.Size(75, 23);
             this.buttonSettings.TabIndex = 1;
@@ -57,7 +58,7 @@
             // buttonViewRecords
             // 
             this.buttonViewRecords.AutoSize = true;
-            this.buttonViewRecords.Location = new System.Drawing.Point(195, 246);
+            this.buttonViewRecords.Location = new System.Drawing.Point(195, 183);
             this.buttonViewRecords.Name = "buttonViewRecords";
             this.buttonViewRecords.Size = new System.Drawing.Size(83, 23);
             this.buttonViewRecords.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(195, 320);
+            this.buttonExit.Location = new System.Drawing.Point(195, 383);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 3;
@@ -83,17 +84,29 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Guess the Number";
             // 
+            // buttonRules
+            // 
+            this.buttonRules.Location = new System.Drawing.Point(195, 246);
+            this.buttonRules.Name = "buttonRules";
+            this.buttonRules.Size = new System.Drawing.Size(75, 23);
+            this.buttonRules.TabIndex = 5;
+            this.buttonRules.Text = "Rules";
+            this.buttonRules.UseVisualStyleBackColor = true;
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.buttonRules);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonViewRecords);
             this.Controls.Add(this.buttonSettings);
             this.Controls.Add(this.buttonStartGame);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuForm_FormClosed);
             this.ResumeLayout(false);
@@ -108,5 +121,6 @@
         private System.Windows.Forms.Button buttonViewRecords;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonRules;
     }
 }

@@ -27,7 +27,6 @@ namespace csh_wf_guess_number_game
             //    }
             //}
 
-            //Application.Run(new MainForm());
             Application.Run(new MenuForm());
         }
     }
