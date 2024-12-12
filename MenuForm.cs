@@ -23,6 +23,7 @@ namespace csh_wf_guess_number_game
             modeForm.Show();
 
             this.Hide();
+            //this.Close();
 
             // alternative approach 
 
@@ -36,12 +37,17 @@ namespace csh_wf_guess_number_game
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            // Exit application when clicking [X]
-            Application.Exit();
+            DialogResult back = MessageBox.Show("Are you sure to exit?", "Exit", MessageBoxButtons.YesNo);
+
+            if (back == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void MenuForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            // Exit application when clicking [X]
             Application.Exit();
         }
     }

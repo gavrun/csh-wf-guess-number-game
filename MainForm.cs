@@ -20,6 +20,11 @@ namespace csh_wf_guess_number_game
 
             game = new GameLogic();
             //StartGame();
+
+            buttonCheck.Enabled = false;
+            buttonStart.Enabled = true;
+            buttonRestart.Enabled = false;
+
         }
 
         // Starts new game by generating a random number and setting range
@@ -37,6 +42,10 @@ namespace csh_wf_guess_number_game
 
             txtGuess.Clear();
             txtGuess.Focus();
+
+            buttonCheck.Enabled = true;
+            buttonStart.Enabled = false;
+            buttonRestart.Enabled = true;
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -68,18 +77,25 @@ namespace csh_wf_guess_number_game
 
         private void buttonRestart_Click(object sender, EventArgs e)
         {
-            StartGame();
+            DialogResult restart = MessageBox.Show("Want to restart?", "Restart", MessageBoxButtons.YesNo);
 
-            buttonCheck.Enabled = true;
-            buttonStart.Enabled = false;
+            if (restart == DialogResult.Yes)
+            {
+                StartGame();
+            }
         }
 
         private void buttonMainBack_Click(object sender, EventArgs e)
         {
-            ModeForm modeForm = new ModeForm();
-            modeForm.Show();
+            DialogResult back = MessageBox.Show("Want to quit?", "Back", MessageBoxButtons.YesNo);
 
-            this.Hide();
+            if (back == DialogResult.Yes)
+            {
+                ModeForm modeForm = new ModeForm();
+                modeForm.Show();
+
+                this.Hide();
+            }
         }
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {

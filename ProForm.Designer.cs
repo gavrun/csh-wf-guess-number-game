@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.labelTimer = new System.Windows.Forms.Label();
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
@@ -41,17 +40,10 @@
             this.txtMinRange = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtGuess = new System.Windows.Forms.TextBox();
+            this.numericUpDownTimer = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimer)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(339, 130);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // labelTimer
             // 
@@ -136,7 +128,7 @@
             this.txtMaxRange.Name = "txtMaxRange";
             this.txtMaxRange.Size = new System.Drawing.Size(100, 20);
             this.txtMaxRange.TabIndex = 17;
-            this.txtMaxRange.Text = "100";
+            this.txtMaxRange.Text = "999";
             // 
             // txtMinRange
             // 
@@ -163,11 +155,39 @@
             this.txtGuess.TabIndex = 20;
             this.txtGuess.Text = "Guess";
             // 
+            // numericUpDownTimer
+            // 
+            this.numericUpDownTimer.Increment = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.numericUpDownTimer.Location = new System.Drawing.Point(342, 123);
+            this.numericUpDownTimer.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numericUpDownTimer.Minimum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numericUpDownTimer.Name = "numericUpDownTimer";
+            this.numericUpDownTimer.Size = new System.Drawing.Size(72, 20);
+            this.numericUpDownTimer.TabIndex = 21;
+            this.numericUpDownTimer.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            // 
             // ProForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.numericUpDownTimer);
             this.Controls.Add(this.txtGuess);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -180,20 +200,20 @@
             this.Controls.Add(this.buttonRestart);
             this.Controls.Add(this.buttonCheck);
             this.Controls.Add(this.labelTimer);
-            this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ProForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProForm_FormClosed);
+            this.Load += new System.EventHandler(this.ProForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelTimer;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonBack;
@@ -206,5 +226,6 @@
         private System.Windows.Forms.TextBox txtMinRange;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtGuess;
+        private System.Windows.Forms.NumericUpDown numericUpDownTimer;
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.buttonStartGame = new System.Windows.Forms.Button();
-            this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonViewRecords = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,15 +44,6 @@
             this.buttonStartGame.Text = "Start Game";
             this.buttonStartGame.UseVisualStyleBackColor = true;
             this.buttonStartGame.Click += new System.EventHandler(this.buttonStartGame_Click);
-            // 
-            // buttonSettings
-            // 
-            this.buttonSettings.Location = new System.Drawing.Point(195, 313);
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(75, 23);
-            this.buttonSettings.TabIndex = 1;
-            this.buttonSettings.Text = "Settings";
-            this.buttonSettings.UseVisualStyleBackColor = true;
             // 
             // buttonViewRecords
             // 
@@ -102,7 +92,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonViewRecords);
-            this.Controls.Add(this.buttonSettings);
             this.Controls.Add(this.buttonStartGame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MenuForm";
@@ -117,7 +106,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonStartGame;
-        private System.Windows.Forms.Button buttonSettings;
         private System.Windows.Forms.Button buttonViewRecords;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label label1;
