@@ -205,7 +205,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProForm_FormClosed);
-            this.Load += new System.EventHandler(this.ProForm_Load);
+            
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimer)).EndInit();
             this.ResumeLayout(false);

@@ -12,14 +12,19 @@ namespace csh_wf_guess_number_game
 {
     public partial class MenuForm : Form
     {
-        public MenuForm()
+        private readonly IData data; // data model
+
+        public MenuForm(IData dataStore)
         {
             InitializeComponent();
+
+            data = dataStore;
         }
 
         private void buttonStartGame_Click(object sender, EventArgs e)
         {
-            ModeForm modeForm = new ModeForm();
+            // pass data
+            ModeForm modeForm = new ModeForm(data);
             modeForm.Show();
 
             this.Hide();
@@ -34,6 +39,52 @@ namespace csh_wf_guess_number_game
             //}
             //Application.Exit();
         }
+
+        private void buttonRules_Click(object sender, EventArgs e)
+        {
+            RulesForm rulesForm = new RulesForm(data);
+            rulesForm.Show();
+
+            this.Hide();
+        }
+
+
+        private void buttonViewRecords_Click(object sender, EventArgs e)
+        {
+            //AddTestRecord(); // DEBUG
+
+            var records = data.GetAllRecords();
+
+            if (records.Count == 0)
+            {
+                MessageBox.Show("No records found.", "Game Records");
+                return;
+            }
+
+            RecordsForm recordsForm = new RecordsForm(data);
+            recordsForm.Show();
+
+            this.Hide();
+
+            //string recordList = string.Join(Environment.NewLine, records.Select(r => 
+            //    $"{r.PlayerName} - {r.Attempts} attempts in {r.TimeTaken} seconds on {r.Date}"));
+
+            //MessageBox.Show(recordList, "Game Records");
+
+        }
+        private void AddTestRecord()
+        {
+            var record = new GameRecord
+            {
+                PlayerName = "Test",
+                Attempts = 1,
+                TimeTaken = 1,
+                Date = DateTime.UtcNow
+            };
+
+            data.AddRecord(record);
+        }
+
 
         private void buttonExit_Click(object sender, EventArgs e)
         {

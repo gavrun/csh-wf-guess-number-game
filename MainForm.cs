@@ -12,11 +12,15 @@ namespace csh_wf_guess_number_game
 {
     public partial class MainForm : Form
     {
+        private readonly IData data;
+
         private GameLogic game;
 
-        public MainForm()
+        public MainForm(IData dataStore)
         {
             InitializeComponent();
+
+            data = dataStore;
 
             game = new GameLogic();
             //StartGame();
@@ -91,7 +95,7 @@ namespace csh_wf_guess_number_game
 
             if (back == DialogResult.Yes)
             {
-                ModeForm modeForm = new ModeForm();
+                ModeForm modeForm = new ModeForm(data);
                 modeForm.Show();
 
                 this.Hide();

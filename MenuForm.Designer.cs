@@ -48,12 +48,13 @@
             // buttonViewRecords
             // 
             this.buttonViewRecords.AutoSize = true;
-            this.buttonViewRecords.Location = new System.Drawing.Point(195, 183);
+            this.buttonViewRecords.Location = new System.Drawing.Point(195, 250);
             this.buttonViewRecords.Name = "buttonViewRecords";
             this.buttonViewRecords.Size = new System.Drawing.Size(83, 23);
             this.buttonViewRecords.TabIndex = 2;
             this.buttonViewRecords.Text = "View Records";
             this.buttonViewRecords.UseVisualStyleBackColor = true;
+            this.buttonViewRecords.Click += new System.EventHandler(this.buttonViewRecords_Click);
             // 
             // buttonExit
             // 
@@ -76,12 +77,13 @@
             // 
             // buttonRules
             // 
-            this.buttonRules.Location = new System.Drawing.Point(195, 246);
+            this.buttonRules.Location = new System.Drawing.Point(195, 181);
             this.buttonRules.Name = "buttonRules";
             this.buttonRules.Size = new System.Drawing.Size(75, 23);
             this.buttonRules.TabIndex = 5;
             this.buttonRules.Text = "Rules";
             this.buttonRules.UseVisualStyleBackColor = true;
+            this.buttonRules.Click += new System.EventHandler(this.buttonRules_Click);
             // 
             // MenuForm
             // 

@@ -12,17 +12,27 @@ namespace csh_wf_guess_number_game
 {
     public partial class ProForm : Form
     {
+        private readonly IData data; // data model
+
         private GameLogic game;
+
+        private readonly string _playerName;
 
         // Timer
         private Timer gameTimer;
         private int remainingTime;
 
-        public ProForm()
+        private int timeTaken;
+
+        public ProForm(IData dataStore, string playerName)
         {
             InitializeComponent();
 
+            data = dataStore;
+
             game = new GameLogic();
+
+            _playerName = playerName; // _name local
 
             buttonCheck.Enabled = false;
             buttonRestart.Enabled = false;
@@ -104,6 +114,23 @@ namespace csh_wf_guess_number_game
             buttonStart.Enabled = false;
         }
 
+        // add game record 
+        private void RecordGame(string _playerName, int attempts, int timeTaken)
+        {
+            var record = new GameRecord
+            {
+                // DEBUG test data
+                //PlayerName = "PlayerName1", Attempts = 7, TimeTaken = 60, Date = DateTime.Now 
+
+                PlayerName = _playerName,
+                Attempts = attempts,
+                TimeTaken = timeTaken,
+                Date = DateTime.Now,
+            };
+
+            data.AddRecord(record);
+        }
+
         private void buttonStart_Click(object sender, EventArgs e)
         {
             StartGame();
@@ -124,8 +151,11 @@ namespace csh_wf_guess_number_game
                     PauseGame();
 
                     MessageBox.Show($"Congrats! You guessed it for {game.Attempts} attempts.", "Win");
-                    
-                    StartGame();
+
+                    // timerSeconds - remainingTime
+                    timeTaken = (int)numericUpDownTimer.Value - remainingTime;
+
+                    RecordGame(_playerName, game.Attempts, timeTaken);
                 }
             }
             else
@@ -160,7 +190,9 @@ namespace csh_wf_guess_number_game
 
             if (back == DialogResult.Yes)
             {
-                ModeForm modeForm = new ModeForm();
+                PauseGame();
+
+                ModeForm modeForm = new ModeForm(data);
                 modeForm.Show();
 
                 this.Hide();
@@ -172,9 +204,5 @@ namespace csh_wf_guess_number_game
             Application.Exit();
         }
 
-        private void ProForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

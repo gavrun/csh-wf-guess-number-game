@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,8 +18,16 @@ namespace csh_wf_guess_number_game
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Switch to starting from MenuForm 
+            // Data model
 
+            // local file path
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameRecords.xml");
+
+            //IData dataStore = new InMemoryData();
+
+            IData dataStore = new FileData(filePath);
+
+            // Switch to starting from MenuForm 
             //using (MenuForm menuForm = new MenuForm())
             //{
             //    if (menuForm.ShowDialog() == DialogResult.OK)
@@ -27,7 +36,7 @@ namespace csh_wf_guess_number_game
             //    }
             //}
 
-            Application.Run(new MenuForm());
+            Application.Run(new MenuForm(dataStore));
         }
     }
 }

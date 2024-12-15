@@ -12,9 +12,13 @@ namespace csh_wf_guess_number_game
 {
     public partial class MultiForm : Form
     {
-        public MultiForm()
+        private readonly IData data;
+
+        public MultiForm(IData dataStore)
         {
             InitializeComponent();
+
+            data = dataStore;
         }
 
         // multiplayer logic to be implemented
@@ -26,7 +30,7 @@ namespace csh_wf_guess_number_game
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            ModeForm modeForm = new ModeForm();
+            ModeForm modeForm = new ModeForm(data);
             modeForm.Show();
 
             this.Hide();

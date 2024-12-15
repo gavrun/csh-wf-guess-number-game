@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ArrayOfGameRecord xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GameRecord>
+    <PlayerName>Abc</PlayerName>
+    <Attempts>5</Attempts>
+    <TimeTaken>12</TimeTaken>
+    <Date>2024-12-15T02:49:19.3362991+00:00</Date>
+  </GameRecord>
+  <GameRecord>
+    <PlayerName>Bill</PlayerName>
+    <Attempts>1</Attempts>
+    <TimeTaken>16</TimeTaken>
+    <Date>2024-12-15T02:54:39.8337678+00:00</Date>
+  </GameRecord>
+</ArrayOfGameRecord>

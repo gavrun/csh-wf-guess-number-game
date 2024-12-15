@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,15 +13,21 @@ namespace csh_wf_guess_number_game
 {
     public partial class ModeForm : Form
     {
-        public ModeForm()
+        private readonly IData data;
+
+        private readonly ErrorProvider errorProvider = new ErrorProvider();
+
+        public ModeForm(IData dataStore)
         {
             InitializeComponent();
+
+            data = dataStore;
         }
 
         private void buttonMainMode_Click(object sender, EventArgs e)
         {
             // Create MainForm
-            MainForm mainForm = new MainForm();
+            MainForm mainForm = new MainForm(data);
             mainForm.Show();
 
             // Close MenuForm
@@ -38,7 +45,25 @@ namespace csh_wf_guess_number_game
 
         private void buttonProMode_Click(object sender, EventArgs e)
         {
-            ProForm proForm = new ProForm();
+            string playerName = textBoxPlayerName.Text;
+
+            // text box error check
+            errorProvider.Clear();
+
+            if (string.IsNullOrWhiteSpace(playerName))
+            {
+                errorProvider.SetError(textBoxPlayerName, "Enter your name before starting the game please");
+                return;
+            }
+            if (!Regex.IsMatch(playerName, @"^[a-zA-Z0-9]+$"))
+            {
+                errorProvider.SetError(textBoxPlayerName, "Only letters and numbers");
+                return;
+            }
+           
+            errorProvider.SetError(textBoxPlayerName, string.Empty);
+
+            ProForm proForm = new ProForm(data, playerName);
             proForm.Show();
 
             this.Hide();
@@ -46,7 +71,7 @@ namespace csh_wf_guess_number_game
 
         private void buttonMultiMode_Click(object sender, EventArgs e)
         {
-            MultiForm multiForm = new MultiForm();
+            MultiForm multiForm = new MultiForm(data);
             multiForm.Show();
             
             // not implemented
@@ -61,7 +86,7 @@ namespace csh_wf_guess_number_game
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            MenuForm menuForm = new MenuForm();
+            MenuForm menuForm = new MenuForm(data);
             menuForm.Show();
 
             this.Hide();
