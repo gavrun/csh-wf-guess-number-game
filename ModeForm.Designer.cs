@@ -156,7 +156,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ModeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ModeForm";
+            this.Text = "Guess the Number - Select mode";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ModeForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

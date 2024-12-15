@@ -40,6 +40,7 @@ namespace csh_wf_guess_number_game
         {
             Attempts++;
 
+            // non-SRP compliant: move strings out of here
             if (userGuess < randomNumber)
             {
                 //labelMessage.Text = "Number is bigger.";
@@ -122,11 +123,20 @@ namespace csh_wf_guess_number_game
 
         public void AddRecord(GameRecord record)
         {
-            var records = GetAllRecords();
+            try
+            {
+                var records = GetAllRecords();
 
-            records.Add(record); // get add save
+                records.Add(record); // get add save
 
-            SaveRecords(records);
+                SaveRecords(records);
+            }
+            catch (Exception)
+            {
+                // sure?
+                throw;
+            }
+
         }
 
         public List<GameRecord> GetAllRecords()

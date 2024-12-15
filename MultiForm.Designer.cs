@@ -50,7 +50,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MultiForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MultiForm";
+            this.Text = "Guess the Number - Multiplayer mode";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MultiForm_FormClosed);
             this.ResumeLayout(false);
 

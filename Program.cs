@@ -39,4 +39,23 @@ namespace csh_wf_guess_number_game
             Application.Run(new MenuForm(dataStore));
         }
     }
+
+    public static class FormNav
+    {
+        //public static void BackToMenu(Form currentForm, IData data)
+        //{
+        //    MenuForm menuForm = new MenuForm(data);
+        //    menuForm.Show();
+        //
+        //    currentForm.Hide();
+        //}
+
+        public static void BackToMode(Form currentForm, IData data)
+        {
+            ModeForm modeForm = new ModeForm(data);
+            modeForm.Show();
+
+            currentForm.Hide();
+        }
+    }
 }

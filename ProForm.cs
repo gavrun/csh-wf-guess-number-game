@@ -44,8 +44,14 @@ namespace csh_wf_guess_number_game
             int minRange;
             int maxRange; // can be changed
 
-            minRange = int.Parse(txtMinRange.Text);
-            maxRange = int.Parse(txtMaxRange.Text);
+            //minRange = int.Parse(txtMinRange.Text);
+            //maxRange = int.Parse(txtMaxRange.Text);
+
+            if (!int.TryParse(txtMinRange.Text, out minRange) || !int.TryParse(txtMaxRange.Text, out maxRange))
+            {
+                MessageBox.Show("Please enter valid numbers", "Error");
+                return;
+            }
 
             // 1-minute timer default
             int timerSeconds = (int)numericUpDownTimer.Value;  // can be set 
@@ -63,12 +69,19 @@ namespace csh_wf_guess_number_game
 
         private void StartTimer(int seconds)
         {
+            if (gameTimer == null)
+            {
+                gameTimer = new Timer { Interval = 1000 };
+
+                gameTimer.Tick += GameTimer_Tick;
+            }
+
             remainingTime = seconds;
 
-            gameTimer = new Timer();
-            gameTimer.Interval = 1000; // 1 second, make it constant timer gets faster 
+            //gameTimer = new Timer();
+            //gameTimer.Interval = 1000; // 1 second, make it constant timer gets faster BUG
 
-            gameTimer.Tick += GameTimer_Tick;
+            //gameTimer.Tick += GameTimer_Tick;
 
             gameTimer.Start();
         }
@@ -87,8 +100,12 @@ namespace csh_wf_guess_number_game
                 PauseGame();
 
                 MessageBox.Show("Time is up! Game over.", "Game Over");
-                
+
                 //this.close and open ModeForm 
+                ModeForm modeForm = new ModeForm(data);
+                modeForm.Show();
+
+                this.Hide();
             }
         }
 
@@ -192,10 +209,12 @@ namespace csh_wf_guess_number_game
             {
                 PauseGame();
 
-                ModeForm modeForm = new ModeForm(data);
-                modeForm.Show();
+                //ModeForm modeForm = new ModeForm(data);
+                //modeForm.Show();
 
-                this.Hide();
+                //this.Hide();
+
+                FormNav.BackToMode(this, data);
             }
         }
 

@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewRecords = new System.Windows.Forms.DataGridView();
-            this.buttonBack = new System.Windows.Forms.Button();
             this.playerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.attemptsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeTakenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gameRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRecords)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameRecordBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -56,16 +56,6 @@
             this.dataGridViewRecords.RowHeadersWidth = 50;
             this.dataGridViewRecords.Size = new System.Drawing.Size(484, 378);
             this.dataGridViewRecords.TabIndex = 0;
-            // 
-            // buttonBack
-            // 
-            this.buttonBack.Location = new System.Drawing.Point(195, 412);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(75, 23);
-            this.buttonBack.TabIndex = 13;
-            this.buttonBack.Text = "Back";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // playerNameDataGridViewTextBoxColumn
             // 
@@ -95,6 +85,16 @@
             // 
             this.gameRecordBindingSource.DataSource = typeof(csh_wf_guess_number_game.GameRecord);
             // 
+            // buttonBack
+            // 
+            this.buttonBack.Location = new System.Drawing.Point(195, 412);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(75, 23);
+            this.buttonBack.TabIndex = 13;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // RecordsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,7 +105,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "RecordsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Game Records";
+            this.Text = "Guess the Number - Game Records";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RecordsForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRecords)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameRecordBindingSource)).EndInit();

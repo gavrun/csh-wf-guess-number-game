@@ -60,7 +60,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "RulesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RulesForm";
+            this.Text = "Guess the Number - Rules";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RulesForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

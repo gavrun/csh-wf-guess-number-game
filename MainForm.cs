@@ -37,8 +37,14 @@ namespace csh_wf_guess_number_game
             int minRange;
             int maxRange; // can be changed
 
-            minRange = int.Parse(txtMinRange.Text);
-            maxRange = int.Parse(txtMaxRange.Text);
+            //minRange = int.Parse(txtMinRange.Text);
+            //maxRange = int.Parse(txtMaxRange.Text);
+
+            if (!int.TryParse(txtMinRange.Text, out minRange) || !int.TryParse(txtMaxRange.Text, out maxRange))
+            {
+                MessageBox.Show("Please enter valid numbers", "Error");
+                return;
+            }
 
             game.StartGame(minRange, maxRange);
 
@@ -55,9 +61,6 @@ namespace csh_wf_guess_number_game
         private void buttonStart_Click(object sender, EventArgs e)
         {
             StartGame();
-
-            buttonCheck.Enabled = true;
-            buttonStart.Enabled = false;
         }
 
         private void buttonCheck_Click(object sender, EventArgs e)

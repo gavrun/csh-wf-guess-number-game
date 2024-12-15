@@ -48,11 +48,11 @@
             // labelTimer
             // 
             this.labelTimer.AutoSize = true;
-            this.labelTimer.Location = new System.Drawing.Point(339, 96);
+            this.labelTimer.Location = new System.Drawing.Point(339, 92);
             this.labelTimer.Name = "labelTimer";
-            this.labelTimer.Size = new System.Drawing.Size(60, 13);
+            this.labelTimer.Size = new System.Drawing.Size(49, 13);
             this.labelTimer.TabIndex = 1;
-            this.labelTimer.Text = "TimerValue";
+            this.labelTimer.Text = "Seconds";
             // 
             // buttonStart
             // 
@@ -143,9 +143,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(339, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Timer TBD";
+            this.label2.Text = "Timer";
             // 
             // txtGuess
             // 
@@ -203,9 +203,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ProForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProForm";
+            this.Text = "Guess the Number - Pro mode";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProForm_FormClosed);
-            
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimer)).EndInit();
             this.ResumeLayout(false);
